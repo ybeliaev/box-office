@@ -5,13 +5,21 @@ import {
   Link
 } from "react-router-dom";
 
+import Navs from "./components/Navs"
+import Home from "./pages/Home"
+import Starred from './pages/Starred';
+
 function App() {
   return (
-    <Switch>
-      <Route exact path="/"><h1>Hi, this is home page</h1></Route>    
-      <Route exact path="/starred"><h1>Hi, this is starred page</h1></Route>
-      <Route><h1>Hi, this is 404 page</h1></Route>
-  </Switch>
+    <div>
+      <Navs/>
+      <Switch>
+        <Route exact path="/"><Home/></Route>    
+        <Route exact path="/starred"><Starred/></Route>
+        <Route><h1>Hi, this is 404 page</h1></Route>
+      </Switch>
+    </div>
+    
   );
 }
 
