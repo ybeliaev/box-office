@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import MainPageLayout from "../components/MainPageLayout";
 import { apiGet } from "../misc/config";
+import ActorGrid from "./actor/ActorGrid";
+import ShowGrid from "./show/ShowGrid";
 
 const Home = () => {
   const [input, setInput] = useState("");
@@ -35,12 +37,12 @@ const Home = () => {
       return <div>No results</div>;
     }
     if (result && result.length > 0) {
-      // разные свойства: item.show || item.person
-      return result[0].show
-        ? result.map((item) => <div key={item.show.id}>{item.show.name}</div>)
-        : result.map((item) => (
-            <div key={item.person.id}>{item.person.name}</div>
-          ));
+      // разные свойства в получаемом объекте: item.show || item.person
+      return result[0].show ? (
+        <ShowGrid data={result} />
+      ) : (
+        <ActorGrid data={result} />
+      );
     }
     return null;
   };
