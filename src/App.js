@@ -6,6 +6,7 @@ import {
 
 import Navs from "./components/Navs"
 import Home from "./pages/Home"
+import Show from './pages/Show';
 import Starred from './pages/Starred';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/"><Home/></Route>    
         <Route exact path="/starred"><Starred/></Route>
-        <Route><h1>Hi, this is 404 page</h1></Route>
+        <Route exact path="/show/:id"><Show/></Route>
       </Switch>
   );
 }

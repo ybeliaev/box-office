@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import MainPageLayout from "../components/MainPageLayout";
 import { apiGet } from "../misc/config";
