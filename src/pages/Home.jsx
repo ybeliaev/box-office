@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import MainPageLayout from "../components/MainPageLayout";
 import { apiGet } from "../misc/config";
-import ActorGrid from "./actor/ActorGrid";
-import ShowGrid from "./show/ShowGrid";
+import ActorGrid from "../components/actor/ActorGrid";
+import ShowGrid from "../components/show/ShowGrid";
 
 const Home = () => {
   const [input, setInput] = useState("");
